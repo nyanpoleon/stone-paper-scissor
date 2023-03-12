@@ -17,7 +17,7 @@ body {
     margin-left: 85rem;
 }
 .hurray-svg {
-   padding-right: 32px;
+    padding-right: 32px;
     width: 500px;
 }
 .hurray-text {
@@ -26,6 +26,7 @@ body {
     text-align: center;
 }
 
+/* HURRAY!! */
 .hurray {
     font-family: 'Roboto', sans-serif;
     color: #FFFFFF;
@@ -37,6 +38,7 @@ body {
     letter-spacing: 0.1em;
 }
 
+/* YOU WON THE GAME  */
 .hurray2 {
     font-family: 'Roboto';
     font-style: normal;
@@ -62,6 +64,8 @@ body {
     letter-spacing: 0.1em;
 }
 
+
+/* RULES */
 .rules-button {
     border: 2px solid #FFFFFF;
     border-radius: 10px;
@@ -73,3 +77,29 @@ body {
     font-size: 21px;
     font-weight: 600;
 }
+
+/* MODAL */
+.modal {
+    width: 278px;
+    height: 323px;
+    left: 970px;
+    top: 329px;
+    position: absolute;
+    background: #004429;
+    border: 7px solid #FFFFFF;
+    border-radius: 13px;
+}
+ul {
+    list-style-type: none;
+}
+li::before {
+    content: "";
+    background-color: #FFD600;
+    width: 8px;
+    height: 8px;
+    margin-right: 5px;
+    font-weight: bold;
+    display: inline-block; 
+    /* width: 1em; */
+    margin-left: -1em;
+  }
