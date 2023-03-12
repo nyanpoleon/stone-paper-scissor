@@ -121,6 +121,8 @@ body {
 }
 .line3 {
     position: absolute;
+    margin-top: 252px;
+    margin-left: 805px;
 }
 .stone {
     position: absolute;
@@ -146,6 +148,8 @@ body {
     position: absolute;
     align-items:center;
     justify-content: center;
+    margin-top: 312px;
+    margin-left: 678px;
 }
 .paper {
     position: absolute;
