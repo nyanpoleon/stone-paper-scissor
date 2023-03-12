@@ -95,15 +95,32 @@ body {
     justify-content: center;
 }
 .dynamic {
+    display: flex;  
+}
+.ka-iba-ibo {
     display: flex;
-    
 }
 /* STONE-PAPER-SCISSOR BUTTONS */
 .blue {
     display: flex;
-    /* position: absolute; */
+    position: absolute;
     align-items:center;
     justify-content: center;
+    margin-top: 112px;
+    margin-left: 540px;
+}
+.line1 {
+    position: absolute;
+    margin-top: 252px;
+    margin-left: 646px
+}
+.line2 {
+    position: absolute;
+    margin-top: 183px;
+    margin-left: 693px;
+}
+.line3 {
+    position: absolute;
 }
 .stone {
     position: absolute;
@@ -112,9 +129,11 @@ body {
 }
 .purple {
     display: flex;
-    /* position: absolute; */
+    position: absolute;
     align-items:center;
     justify-content: center;
+    margin-top: 112px;
+    margin-left: 813px;
 }
 .scissors {
     position: absolute;
@@ -124,7 +143,7 @@ body {
 }
 .yellow {
     display: flex;
-    /* position: absolute; */
+    position: absolute;
     align-items:center;
     justify-content: center;
 }
