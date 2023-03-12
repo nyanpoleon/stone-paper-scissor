@@ -4,6 +4,76 @@ body {
     background-color: #8CC461;
     font-family: 'Roboto', sans-serif;
 }
+/* HEADER WITH THE TEXT AND THE COUNTER */
+.header {
+    display: flex;
+    
+    border: 2px solid #FFFFFF;
+    border-radius: 13px;
+    width: 850px;
+    height: 158px;
+    left: 240px;
+    top: 62px;
+    margin-top: 20px;
+    margin-left: 370px;
+    margin-right: 370px;
+}
+
+/* ROCK-PAPER-SCISSORS TEXT */
+.rps-text {
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;  
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 47px;
+    letter-spacing: 0.1em;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+/* COUNTER-SCRORES */
+.scores {
+    
+}
+.dynamic {
+    display: flex;
+    
+}
+/* STONE-PAPER-SCISSOR BUTTONS */
+.blue {
+    display: flex;
+    /* position: absolute; */
+    align-items:center;
+    justify-content: center;
+}
+.stone {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+.purple {
+    display: flex;
+    /* position: absolute; */
+    align-items:center;
+    justify-content: center;
+}
+.scissors {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+.yellow {
+    display: flex;
+    /* position: absolute; */
+    align-items:center;
+    justify-content: center;
+}
+.paper {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
 .hurray-header {
     margin-top: 100px;
     width: 94.5rem;
