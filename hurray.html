@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hurray!</title>
     <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
+    
 </head>
 <body style="margin:0">
     <div class="hurray-header">
@@ -18,8 +18,11 @@
         </div>
     </div>
     <div class="hurray-footer">
-        <button class="rules-button">RULES</button>
-        <div class="modal">
+        <button class="rules-button" id="ruleshere">RULES</button>
+        <div class="modal" id="hidethis">
+            <div class="x-div" id="clicktohide">
+                <img class="theX" src="files/X.svg" alt="">
+            </div>  
             <div class="rules-header">
                 Game Rules
             </div>
@@ -34,4 +37,6 @@
         </div>
     </div>
 </body>
+
+<script src="app.js"></script>
 </html>
