@@ -9,3 +9,10 @@ hideButton.addEventListener('click', function() {
 rulesButton.addEventListener('click', function() {
     elementToHide.style.display = 'block';
 });
+
+
+function stone(){
+  console.log("sdf")
+  document.getElementById("dynamic").innerHTML = "<p>Hello</p>";
+
+}
