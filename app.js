@@ -23,11 +23,11 @@ rulesButton.addEventListener('click', function () {
 
 const moves = ['rock', 'paper', 'scissors'];
 //intilal score count
-let playerScore = 0;
-let computerScore = 0;
+let playerScore = document.getElementById('your').innerHTML = localStorage.getItem("YOUR SCORE");
+let computerScore = document.getElementById('comp').innerHTML = localStorage.getItem("COMPUTER SCORE");
 
-document.getElementById('your').innerHTML = localStorage.getItem("YOUR SCORE");
-document.getElementById('comp').innerHTML = localStorage.getItem("COMPUTER SCORE");
+
+
 
 
 let rock = document.querySelector(".blue");
