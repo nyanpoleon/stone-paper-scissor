@@ -58,16 +58,18 @@ function gameplay(player_move) {
   } 
 
   //CONDITONS FOR PLAYER WIN
-  else if ((player_move === 'stone' && computer_move === 'scissors') || 
-    (player_move === 'paper' && computer_move === 'stone') || 
-    (player_move === 'scissors' && computer_move === 'paper')) {
+  else if ((player_move === 0 && computer_move === 2) || 
+    (player_move === 1 && computer_move === 0) || 
+    (player_move === 2 && computer_move === 1)) {
 
       playerScore++;
+      localStorage.setItem("YOUR SCORE", playerScore);
       console.log('player wins');
 
   //CONDITIONS FOR PLAYER LOSS
   } else {
     computerScore++;
+    localStorage.setItem("COMPUTER SCORE", computerScore);
     console.log('player loses');
   }
 }
