@@ -26,6 +26,10 @@ const moves = ['rock', 'paper', 'scissors'];
 let playerScore = 0;
 let computerScore = 0;
 
+document.getElementById('your').innerHTML = localStorage.getItem("YOUR SCORE");
+document.getElementById('comp').innerHTML = localStorage.getItem("COMPUTER SCORE");
+
+
 let rock = document.querySelector(".blue");
 let paper = document.querySelector(".yellow");
 let scissors = document.querySelector(".purple");
@@ -63,13 +67,14 @@ function gameplay(player_move) {
     (player_move === 2 && computer_move === 1)) {
 
       playerScore++;
-      localStorage.setItem("YOUR SCORE", playerScore);
+      localStorage.setItem("YOUR SCORE", playerScore); //localstorage
       console.log('player wins');
 
   //CONDITIONS FOR PLAYER LOSS
   } else {
+
     computerScore++;
-    localStorage.setItem("COMPUTER SCORE", computerScore);
+    localStorage.setItem("COMPUTER SCORE", computerScore); //localstorage
     console.log('player loses');
   }
 }
