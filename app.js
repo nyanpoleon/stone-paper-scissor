@@ -22,6 +22,9 @@ rulesButton.addEventListener('click', function () {
 //LOGIC BEHIND ROCK-PAPER-SCISSORS
 
 const moves = ['rock', 'paper', 'scissors'];
+//intilal score count
+let playerScore = 0;
+let computerScore = 0;
 
 let rock = document.querySelector(".blue");
 let paper = document.querySelector(".yellow");
@@ -42,22 +45,29 @@ scissors.addEventListener ("click", function() {
   console.log("scissors");
 })
 
+//THE GAMEPLAY LOGIC
 function gameplay(player_move) {
 
   let computer_move = Math.floor(Math.random() * moves.length);
   let nameofMove = moves[computer_move];
   console.log(nameofMove);
 
+  //IF ITS A TIE
   if (player_move === computer_move) {
     console.log('tie');
   } 
-  
+
+  //CONDITONS FOR PLAYER WIN
   else if ((player_move === 'stone' && computer_move === 'scissors') || 
     (player_move === 'paper' && computer_move === 'stone') || 
     (player_move === 'scissors' && computer_move === 'paper')) {
 
+      playerScore++;
       console.log('player wins');
+
+  //CONDITIONS FOR PLAYER LOSS
   } else {
+    computerScore++;
     console.log('player loses');
   }
 }
