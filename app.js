@@ -20,6 +20,7 @@ rulesButton.addEventListener('click', function () {
 
 
 //LOGIC BEHIND ROCK-PAPER-SCISSORS
+
 const moves = ['rock', 'paper', 'scissors'];
 
 let rock = document.querySelector(".blue");
@@ -27,25 +28,26 @@ let paper = document.querySelector(".yellow");
 let scissors = document.querySelector(".purple");
 
 rock.addEventListener ("click", function() {
-  gameplay(0);
+  gameplay(0); //0  is rock
   console.log("rock");
 })
 
 paper.addEventListener ("click", function() {
-  gameplay(1);
+  gameplay(1); //1 is paper
   console.log("paper");
 })
 
 scissors.addEventListener ("click", function() {
-  gamerplay(2);
+  gameplay(2); //2 is scissors
   console.log("scissors");
 })
 
 function gameplay(player_move) {
 
   let computer_move = Math.floor(Math.random() * moves.length);
-  console.log(computer_move);
-  
+  let nameofMove = moves[computer_move];
+  console.log(nameofMove);
+
   if (player_move === computer_move) {
     console.log('tie');
   } 
