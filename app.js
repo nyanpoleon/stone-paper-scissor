@@ -12,27 +12,32 @@ rulesButton.addEventListener('click', function () {
   elementToHide.style.display = 'block';
 });
 
-// function stone(player_move) {
-//   console.log(player_move)
-//   document.getElementById("dynamic").innerHTML = "<p>Hello</p>";
+//BEHIND THE MYSTERY OF HOW STUFF UPDATES
+function stone() {
+  
+  document.getElementById("your").textContent = playerScore;
 
-// }
+}
 
 
 //LOGIC BEHIND ROCK-PAPER-SCISSORS
 
 const moves = ['rock', 'paper', 'scissors'];
+
 //intilal score count
-let playerScore = document.getElementById('your').innerHTML = localStorage.getItem("YOUR SCORE");
+let scoreYour = document.querySelector("#your");
+let scoreComp = document.querySelector("#comp");
+
+//fetch score of local storage
+let playerScore = document.getElementById('your').innerHTML = localStorage.getItem("YOUR SCORE"); 
 let computerScore = document.getElementById('comp').innerHTML = localStorage.getItem("COMPUTER SCORE");
-
-
-
 
 
 let rock = document.querySelector(".blue");
 let paper = document.querySelector(".yellow");
 let scissors = document.querySelector(".purple");
+
+
 
 rock.addEventListener ("click", function() {
   gameplay(0); //0  is rock
@@ -67,6 +72,7 @@ function gameplay(player_move) {
     (player_move === 2 && computer_move === 1)) {
 
       playerScore++;
+      scoreYour.textContent = `${playerScore}`; // your counter realtime update
       localStorage.setItem("YOUR SCORE", playerScore); //localstorage
       console.log('player wins');
 
@@ -74,6 +80,7 @@ function gameplay(player_move) {
   } else {
 
     computerScore++;
+    scoreComp.textContent = `${computerScore}`; //computer counter realtime update
     localStorage.setItem("COMPUTER SCORE", computerScore); //localstorage
     console.log('player loses');
   }
