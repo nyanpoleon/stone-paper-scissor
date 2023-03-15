@@ -60,11 +60,11 @@ let scissors = document.querySelector(".purple");
 
 // ROCK
 rock.addEventListener ("click", function() {
-  
-  gameplay(0); //0  is rock
-  document.getElementById("dynamic").innerHTML= `
-  <div class="ka-iba-ibo">
-            <div><img class="ripple1" src="files/ripple.svg" alt=""></div>
+  const verdict = gameplay(0); //0  is rock
+  if(verdict === 'tie') {
+    document.getElementById("dynamic").innerHTML= `
+    <div class="ka-iba-ibo">
+            <div><img class="ripple1" src="files/ripple.svg" alt="" style="opacity:0%"></div>
             <div class="player-move">
                 
                 <div class="picks">YOU PICKED</div>
@@ -76,12 +76,14 @@ rock.addEventListener ("click", function() {
                 <div class="against-pc">AGAINST PC</div>
                 <button type="submit" class="playagainBtn">PLAY AGAIN</button>
             </div>
-            <div><img class="ripple2" src="files/ripple.svg" alt=""></div>
+            <div><img class="ripple2" src="files/ripple.svg" alt="" style="opacity:0%"></div>
             <div class="computer-move">
                 <div class="picks">PC PICKED</div>
-                <img src="files/yellow-big.svg" alt="">
+                <img src="files/blue-big.svg" alt="">
             </div>
         </div>`;
+  }
+  
 })
 
 //PAPER
@@ -134,28 +136,30 @@ paper.addEventListener ("click", function() {
 
 //SCISSORS
 scissors.addEventListener ("click", function() {
-  gameplay(2); //2 is scissors
+  const verdict = gameplay(2); //2 is scissors
+  if(verdict === 'tie') {
+    document.getElementById("dynamic").innerHTML= `
+    <div class="ka-iba-ibo">
+              <div><img class="ripple1" src="files/ripple.svg" alt="" style="opacity:0%"></div>
+              <div class="player-move">
+                  
+                  <div class="picks">YOU PICKED</div>
+                  
+                  <img src="files/scissors-big.svg" alt="">
+              </div>
+              <div class="victory-text">
+                  <div class="you-win">YOU WIN</div>
+                  <div class="against-pc">AGAINST PC</div>
+                  <button type="submit" class="playagainBtn">PLAY AGAIN</button>
+              </div>
+              <div><img class="ripple2" src="files/ripple.svg" alt="" style="opacity:0%"></div>
+              <div class="computer-move">
+                  <div class="picks">PC PICKED</div>
+                  <img src="files/scissors-big.svg" alt="">
+              </div>
+          </div>`;
+  }
   
-  document.getElementById("dynamic").innerHTML= `
-  <div class="ka-iba-ibo">
-            <div><img class="ripple1" src="files/ripple.svg" alt=""></div>
-            <div class="player-move">
-                
-                <div class="picks">YOU PICKED</div>
-                
-                <img src="files/scissors-big.svg" alt="">
-            </div>
-            <div class="victory-text">
-                <div class="you-win">YOU WIN</div>
-                <div class="against-pc">AGAINST PC</div>
-                <button type="submit" class="playagainBtn">PLAY AGAIN</button>
-            </div>
-            <div><img class="ripple2" src="files/ripple.svg" alt=""></div>
-            <div class="computer-move">
-                <div class="picks">PC PICKED</div>
-                <img src="files/yellow-big.svg" alt="">
-            </div>
-        </div>`;
 })
 
 //THE GAMEPLAY LOGIC
