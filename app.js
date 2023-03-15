@@ -12,7 +12,7 @@ rulesButton.addEventListener('click', function () {
   elementToHide.style.display = 'block';
 });
 
-//BEHIND THE MYSTERY OF HOW STUFF UPDATES
+
 function stone() {
   
   document.getElementById("your").textContent = playerScore;
@@ -29,8 +29,8 @@ let scoreYour = document.querySelector("#your");
 let scoreComp = document.querySelector("#comp");
 
 //fetch score of local storage
-let playerScore = document.getElementById('your').innerHTML = localStorage.getItem("YOUR SCORE"); 
-let computerScore = document.getElementById('comp').innerHTML = localStorage.getItem("COMPUTER SCORE");
+let playerScore = document.getElementById('your').innerHTML = localStorage.getItem("YOUR SCORE") || 0; 
+let computerScore = document.getElementById('comp').innerHTML = localStorage.getItem("COMPUTER SCORE") || 0;
 
 
 let rock = document.querySelector(".blue");
