@@ -396,17 +396,25 @@ li::before {
     letter-spacing: 0.1em;
 }
 
-.ripple {
+.ripple1 {
     position: absolute;
     margin-left: 281px;
     margin-top: 48px;
+    /* opacity: 0%; */
+}
+
+.ripple2 {
+    position: absolute;
+    margin-left: 818px;
+    margin-top: 47px;
+
 }
 
 .nextBtn {
     
     margin-top: 498px;
     margin-left: 20px;
-    position: absolute;
+    /* position: absolute; */
     width: 119px;
     height: 40px;
     border: 2px solid #FFFFFF;
