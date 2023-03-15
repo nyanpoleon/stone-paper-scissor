@@ -13,11 +13,31 @@ rulesButton.addEventListener('click', function () {
 });
 
 
-function stone() {
-  
-  document.getElementById("your").textContent = playerScore;
+// function stone() {
+//   console.log("working")
+//   document.getElementById("your").textContent = playerScore;
+//   document.getElementById("dynamic").innerHTML= `
+//   <div class="ka-iba-ibo">
+//             <div><img class="ripple1" src="files/ripple.svg" alt=""></div>
+//             <div class="player-move">
+                
+//                 <div class="picks">YOU PICKED</div>
+                
+//                 <img src="files/scissors-big.svg" alt="">
+//             </div>
+//             <div class="victory-text">
+//                 <div class="you-win">YOU WIN</div>
+//                 <div class="against-pc">AGAINST PC</div>
+//                 <button type="submit" class="playagainBtn">PLAY AGAIN</button>
+//             </div>
+//             <div><img class="ripple2" src="files/ripple.svg" alt=""></div>
+//             <div class="computer-move">
+//                 <div class="picks">PC PICKED</div>
+//                 <img src="files/yellow-big.svg" alt="">
+//             </div>
+//         </div>`;
 
-}
+// }
 
 
 //LOGIC BEHIND ROCK-PAPER-SCISSORS
@@ -38,32 +58,116 @@ let paper = document.querySelector(".yellow");
 let scissors = document.querySelector(".purple");
 
 
-
+// ROCK
 rock.addEventListener ("click", function() {
+  
   gameplay(0); //0  is rock
-  console.log("rock");
+  document.getElementById("dynamic").innerHTML= `
+  <div class="ka-iba-ibo">
+            <div><img class="ripple1" src="files/ripple.svg" alt=""></div>
+            <div class="player-move">
+                
+                <div class="picks">YOU PICKED</div>
+                
+                <img src="files/blue-big.svg" alt="">
+            </div>
+            <div class="victory-text">
+                <div class="you-win">YOU WIN</div>
+                <div class="against-pc">AGAINST PC</div>
+                <button type="submit" class="playagainBtn">PLAY AGAIN</button>
+            </div>
+            <div><img class="ripple2" src="files/ripple.svg" alt=""></div>
+            <div class="computer-move">
+                <div class="picks">PC PICKED</div>
+                <img src="files/yellow-big.svg" alt="">
+            </div>
+        </div>`;
 })
 
+//PAPER
 paper.addEventListener ("click", function() {
-  gameplay(1); //1 is paper
-  console.log("paper");
+  const verdict = gameplay(1); //1 is paper
+  if(verdict === 'tie'){
+    document.getElementById("dynamic").innerHTML= `
+    <div class="ka-iba-ibo">
+              <div><img class="ripple1" src="files/ripple.svg" alt="" style="opacity:0%"></div>
+              <div class="player-move">
+                  
+                  <div class="picks">YOU PICKED</div>
+                  
+                  <img src="files/yellow-big.svg" alt="">
+              </div>
+              <div class="victory-text">
+                  <div class="you-win">YOU WIN</div>
+                  <div class="against-pc">AGAINST PC</div>
+                  <button type="submit" class="playagainBtn">PLAY AGAIN</button>
+              </div>
+              <div><img class="ripple2" src="files/ripple.svg" alt="" style="opacity:0%"></div>
+              <div class="computer-move">
+                  <div class="picks">PC PICKED</div>
+                  <img src="files/yellow-big.svg" alt="">
+              </div>
+          </div>`;
+          // document.getElementsByClassName("ripple1").style.opacity = 0;
+  }
+  // document.getElementById("dynamic").innerHTML= `
+  // <div class="ka-iba-ibo">
+  //           <div><img class="ripple1" src="files/ripple.svg" alt=""></div>
+  //           <div class="player-move">
+                
+  //               <div class="picks">YOU PICKED</div>
+                
+  //               <img src="files/yellow-big.svg" alt="">
+  //           </div>
+  //           <div class="victory-text">
+  //               <div class="you-win">YOU WIN</div>
+  //               <div class="against-pc">AGAINST PC</div>
+  //               <button type="submit" class="playagainBtn">PLAY AGAIN</button>
+  //           </div>
+  //           <div><img class="ripple2" src="files/ripple.svg" alt=""></div>
+  //           <div class="computer-move">
+  //               <div class="picks">PC PICKED</div>
+  //               <img src="files/yellow-big.svg" alt="">
+  //           </div>
+  //       </div>`;
 })
 
+//SCISSORS
 scissors.addEventListener ("click", function() {
   gameplay(2); //2 is scissors
-  console.log("scissors");
+  
+  document.getElementById("dynamic").innerHTML= `
+  <div class="ka-iba-ibo">
+            <div><img class="ripple1" src="files/ripple.svg" alt=""></div>
+            <div class="player-move">
+                
+                <div class="picks">YOU PICKED</div>
+                
+                <img src="files/scissors-big.svg" alt="">
+            </div>
+            <div class="victory-text">
+                <div class="you-win">YOU WIN</div>
+                <div class="against-pc">AGAINST PC</div>
+                <button type="submit" class="playagainBtn">PLAY AGAIN</button>
+            </div>
+            <div><img class="ripple2" src="files/ripple.svg" alt=""></div>
+            <div class="computer-move">
+                <div class="picks">PC PICKED</div>
+                <img src="files/yellow-big.svg" alt="">
+            </div>
+        </div>`;
 })
 
 //THE GAMEPLAY LOGIC
 function gameplay(player_move) {
 
   let computer_move = Math.floor(Math.random() * moves.length);
-  let nameofMove = moves[computer_move];
+  var nameofMove = moves[computer_move];
   console.log(nameofMove);
 
   //IF ITS A TIE
   if (player_move === computer_move) {
-    console.log('tie');
+    return 'tie';
   } 
 
   //CONDITONS FOR PLAYER WIN
@@ -74,7 +178,7 @@ function gameplay(player_move) {
       playerScore++;
       scoreYour.textContent = `${playerScore}`; // your counter realtime update
       localStorage.setItem("YOUR SCORE", playerScore); //localstorage
-      console.log('player wins');
+      return 'user' ;
 
   //CONDITIONS FOR PLAYER LOSS
   } else {
@@ -82,6 +186,6 @@ function gameplay(player_move) {
     computerScore++;
     scoreComp.textContent = `${computerScore}`; //computer counter realtime update
     localStorage.setItem("COMPUTER SCORE", computerScore); //localstorage
-    console.log('player loses');
+    return 'computer';
   }
 }

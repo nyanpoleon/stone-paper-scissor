@@ -319,7 +319,7 @@ li::before {
 /* result page */
 
 .player-move {
-    position: fixed;
+    position: absolute;
     
     left: 419px;
     top: 110.2;
