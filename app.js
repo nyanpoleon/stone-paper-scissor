@@ -8,9 +8,9 @@ hideButton.addEventListener('click', function () {
   elementToHide.style.display = 'none';
 });
 
-rulesButton.addEventListener('click', function () {
+function displayRules() {
   elementToHide.style.display = 'block';
-});
+};
 
 //WHEN PLAYGAIN IN CLICKED
 function playagain() {
@@ -245,7 +245,7 @@ function handleScissor() {
             </div>`;
 
         document.getElementById("testBtn").innerHTML = `
-            <button class="rules-button1" id="ruleshere">RULES</button>
+            <button class="rules-button1" id="ruleshere" onclick="displayRules()">RULES</button>
             <a href="hurray.html"><button class="nextBtn">NEXT</button></a>`
   } else if(verdict === 'computer') {
       document.getElementById("dynamic").innerHTML= `
