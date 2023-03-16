@@ -113,7 +113,7 @@ function handleRock() {
                 <a href="hurray.html"><button class="nextBtn">NEXT</button></a>`
     } else if (verdict === 'computer') {
         document.getElementById("dynamic").innerHTML = `
-      <div class="ka-iba-ibo">
+            <div class="ka-iba-ibo">
                 <div><img class="ripple1" src="files/ripple.svg" alt="" style="opacity:0%"></div>
                 <div class="player-move">
                     
@@ -130,9 +130,10 @@ function handleRock() {
                 <div class="computer-move">
                     <div class="picks">PC PICKED</div>
                     <img src="files/${nameofMove}-big.svg" alt="">
-                </div>`
+            </div>`
         document.getElementById("testBtn").innerHTML = `
-            <button class="rules-button1" id="ruleshere" style="">RULES</button>`
+            <button class="rules-button1" id="ruleshere" style=" margin-top: 499px;
+            margin-left: 1360px;" onclick="displayRules()">RULES</button>`
     }
 
 }
