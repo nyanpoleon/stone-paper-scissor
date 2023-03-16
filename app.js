@@ -12,21 +12,31 @@ rulesButton.addEventListener('click', function () {
   elementToHide.style.display = 'block';
 });
 
-
-// function stone() {
-
-
-// }
-
-// function paper() {
-
-
-// }
-
-// function scissors() {
-
-
-// }
+//WHEN PLAYGAIN IN CLICKED
+function playagain() {
+    document.getElementById("dynamic").innerHTML = `
+    <div class="ka-iba-ibo">
+            <img class="line1" src="files/L1.svg" alt="">
+            <img class="line2" src="files/L2.svg" alt="">
+            <img class="line3" src="files/L3.svg" alt="">
+            <div id="stone" class="blue" onclick="handleRock()">
+                <img src="files/blue.svg" alt="" >
+                <img class="stone" src="files/stone.svg" alt=""> 
+            </div>
+            
+            <div id="scissor" class="purple" onclick="handleScissor()">
+                <img src="files/purple.svg" alt="">
+                <img class="scissors" src="files/scissors.svg" alt="">
+            </div>
+           
+            <div id="paper" class="yellow" onclick="handlePaper()">
+                <img src="files/yellow.svg" alt="">
+                <img class="paper" src="files/paper.svg" alt="">
+            </div>
+            
+            
+        </div>`
+}
 
 
 //LOGIC BEHIND ROCK-PAPER-SCISSORS
@@ -48,7 +58,7 @@ let scissors = document.querySelector(".purple");
 
 
 // ROCK
-rock.addEventListener ("click", function() {
+function handleRock() {
   const verdict = gameplay(0); //0  is rock
   if(verdict === 'tie') {
     document.getElementById("dynamic").innerHTML= `
@@ -63,7 +73,7 @@ rock.addEventListener ("click", function() {
             <div class="victory-text">
                 <div class="you-win">TIE UP</div>
                 <div class="against-pc"></div>
-                <button type="submit" class="playagainBtn">REPLAY</button>
+                <button type="submit" class="playagainBtn" onclick="playagain()">REPLAY</button>
             </div>
             <div><img class="ripple2" src="files/ripple.svg" alt="" style="opacity:0%"></div>
             <div class="computer-move">
@@ -84,7 +94,7 @@ rock.addEventListener ("click", function() {
                 <div class="victory-text">
                     <div class="you-win">YOU WIN</div>
                     <div class="against-pc">AGAINST PC</div>
-                    <button type="submit" class="playagainBtn">PLAY AGAIN</button>
+                    <button type="submit" class="playagainBtn" onclick="playagain()">PLAY AGAIN</button>
                 </div>
                 <div><img class="ripple2" src="files/ripple.svg" alt="" style="opacity:0%"></div>
                 <div class="computer-move">
@@ -104,7 +114,7 @@ rock.addEventListener ("click", function() {
                 <div class="victory-text">
                     <div class="you-win">YOU LOST</div>
                     <div class="against-pc">AGAINST PC</div>
-                    <button type="submit" class="playagainBtn">PLAY AGAIN</button>
+                    <button type="submit" class="playagainBtn" onclick="playagain()">PLAY AGAIN</button>
                 </div>
                 <div><img class="ripple2" src="files/ripple.svg" alt="" ></div>
                 <div class="computer-move">
@@ -113,10 +123,10 @@ rock.addEventListener ("click", function() {
                 </div>`
   }
   
-})
+}
 
 //PAPER
-paper.addEventListener ("click", function() {
+function handlePaper() {
   const verdict = gameplay(1); //1 is paper
   if(verdict === 'tie'){
     document.getElementById("dynamic").innerHTML= `
@@ -131,7 +141,7 @@ paper.addEventListener ("click", function() {
               <div class="victory-text">
                   <div class="you-win">TIE UP</div>
                   <div class="against-pc"></div>
-                  <button type="submit" class="playagainBtn">REPLAY</button>
+                  <button type="submit" class="playagainBtn" onclick="playagain()">REPLAY</button>
               </div>
               <div><img class="ripple2" src="files/ripple.svg" alt="" style="opacity:0%"></div>
               <div class="computer-move">
@@ -153,7 +163,7 @@ paper.addEventListener ("click", function() {
                 <div class="victory-text">
                     <div class="you-win">YOU WIN</div>
                     <div class="against-pc">AGAINST PC</div>
-                    <button type="submit" class="playagainBtn">PLAY AGAIN</button>
+                    <button type="submit" class="playagainBtn" onclick="playagain()">PLAY AGAIN</button>
                 </div>
                 <div><img class="ripple2" src="files/ripple.svg" alt="" style="opacity:0%"></div>
                 <div class="computer-move">
@@ -174,7 +184,7 @@ paper.addEventListener ("click", function() {
                 <div class="victory-text">
                     <div class="you-win">YOU LOST</div>
                     <div class="against-pc">AGAINST PC</div>
-                    <button type="submit" class="playagainBtn">PLAY AGAIN</button>
+                    <button type="submit" class="playagainBtn" onclick="playagain()">PLAY AGAIN</button>
                 </div>
                 <div><img class="ripple2" src="files/ripple.svg" alt=""></div>
                 <div class="computer-move">
@@ -183,30 +193,11 @@ paper.addEventListener ("click", function() {
                 </div>
             </div>`;
   }
-  // document.getElementById("dynamic").innerHTML= `
-  // <div class="ka-iba-ibo">
-  //           <div><img class="ripple1" src="files/ripple.svg" alt=""></div>
-  //           <div class="player-move">
-                
-  //               <div class="picks">YOU PICKED</div>
-                
-  //               <img src="files/paper-big.svg" alt="">
-  //           </div>
-  //           <div class="victory-text">
-  //               <div class="you-win">YOU WIN</div>
-  //               <div class="against-pc">AGAINST PC</div>
-  //               <button type="submit" class="playagainBtn">PLAY AGAIN</button>
-  //           </div>
-  //           <div><img class="ripple2" src="files/ripple.svg" alt=""></div>
-  //           <div class="computer-move">
-  //               <div class="picks">PC PICKED</div>
-  //               <img src="files/paper-big.svg" alt="">
-  //           </div>
-  //       </div>`;
-})
+
+}
 
 //SCISSORS
-scissors.addEventListener ("click", function() {
+function handleScissor() {
   const verdict = gameplay(2); //2 is scissors
   if(verdict === 'tie') {
     document.getElementById("dynamic").innerHTML= `
@@ -221,7 +212,7 @@ scissors.addEventListener ("click", function() {
               <div class="victory-text">
                   <div class="you-win">TIE UP</div>
                   <div class="against-pc"></div>
-                  <button type="submit" class="playagainBtn">REPLAY</button>
+                  <button type="submit" class="playagainBtn" onclick="playagain()">REPLAY</button>
               </div>
               <div><img class="ripple2" src="files/ripple.svg" alt="" style="opacity:0%"></div>
               <div class="computer-move">
@@ -242,7 +233,7 @@ scissors.addEventListener ("click", function() {
                 <div class="victory-text">
                     <div class="you-win">YOU WIN</div>
                     <div class="against-pc">AGAINST PC</div>
-                    <button type="submit" class="playagainBtn">REPLAY</button>
+                    <button type="submit" class="playagainBtn" onclick="playagain()">REPLAY</button>
                 </div>
                 <div><img class="ripple2" src="files/ripple.svg" alt="" style="opacity:0%"></div>
                 <div class="computer-move">
@@ -263,7 +254,7 @@ scissors.addEventListener ("click", function() {
                 <div class="victory-text">
                     <div class="you-win">YOU LOST</div>
                     <div class="against-pc">AGAINST PC</div>
-                    <button type="submit" class="playagainBtn">REPLAY</button>
+                    <button type="submit" class="playagainBtn" onclick="playagain()">REPLAY</button>
                 </div>
                 <div><img class="ripple2" src="files/ripple.svg" alt="" ></div>
                 <div class="computer-move">
@@ -273,7 +264,7 @@ scissors.addEventListener ("click", function() {
             </div>`;
   }
   
-})
+}
 
 var computer_move;
 var nameofMove;
