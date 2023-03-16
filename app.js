@@ -121,6 +121,8 @@ function handleRock() {
                     <div class="picks">PC PICKED</div>
                     <img src="files/${nameofMove}-big.svg" alt="">
                 </div>`
+        document.getElementById("testBtn").innerHTML = `
+            <button class="rules-button1" id="ruleshere" style="">RULES</button>`
   }
   
 }
@@ -241,6 +243,10 @@ function handleScissor() {
                     <img src="files/${nameofMove}-big.svg" alt="">
                 </div>
             </div>`;
+
+        document.getElementById("testBtn").innerHTML = `
+            <button class="rules-button1" id="ruleshere">RULES</button>
+            <a href="hurray.html"><button class="nextBtn">NEXT</button></a>`
   } else if(verdict === 'computer') {
       document.getElementById("dynamic").innerHTML= `
       <div class="ka-iba-ibo">
