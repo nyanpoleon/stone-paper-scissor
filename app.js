@@ -15,7 +15,7 @@ function displayRules() {
 //WHEN PLAYGAIN IN CLICKED
 function playagain() {
     document.getElementById("dynamic").innerHTML = `
-    <div class="ka-iba-ibo">
+        <div class="ka-iba-ibo">
             <img class="line1" src="files/L1.svg" alt="">
             <img class="line2" src="files/L2.svg" alt="">
             <img class="line3" src="files/L3.svg" alt="">
@@ -66,7 +66,7 @@ function handleRock() {
     const verdict = gameplay(0); //0  is rock
     if (verdict === 'tie') {
         document.getElementById("dynamic").innerHTML = `
-    <div class="ka-iba-ibo">
+        <div class="ka-iba-ibo">
             <div><img class="ripple1" src="files/ripple.svg" alt="" style="opacity:0%"></div>
             <div class="player-move">
                 
@@ -143,30 +143,8 @@ function handlePaper() {
     const verdict = gameplay(1); //1 is paper
     if (verdict === 'tie') {
         document.getElementById("dynamic").innerHTML = `
-    <div class="ka-iba-ibo">
-              <div><img class="ripple1" src="files/ripple.svg" alt="" style="opacity:0%"></div>
-              <div class="player-move">
-                  
-                  <div class="picks">YOU PICKED</div>
-                  
-                  <img src="files/paper-big.svg" alt="">
-              </div>
-              <div class="victory-text">
-                  <div class="you-win">TIE UP</div>
-                  <div class="against-pc"></div>
-                  <button type="submit" class="playagainBtn" onclick="playagain()">REPLAY</button>
-              </div>
-              <div><img class="ripple2" src="files/ripple.svg" alt="" style="opacity:0%"></div>
-              <div class="computer-move">
-                  <div class="picks">PC PICKED</div>
-                  <img src="files/${nameofMove}-big.svg" alt="">
-              </div>
-          </div>`;
-
-    } else if (verdict === 'user') {
-        document.getElementById("dynamic").innerHTML = `
-      <div class="ka-iba-ibo">
-                <div><img class="ripple1" src="files/ripple.svg" alt="" ></div>
+            <div class="ka-iba-ibo">
+                <div><img class="ripple1" src="files/ripple.svg" alt="" style="opacity:0%"></div>
                 <div class="player-move">
                     
                     <div class="picks">YOU PICKED</div>
@@ -174,9 +152,9 @@ function handlePaper() {
                     <img src="files/paper-big.svg" alt="">
                 </div>
                 <div class="victory-text">
-                    <div class="you-win">YOU WIN</div>
-                    <div class="against-pc">AGAINST PC</div>
-                    <button type="submit" class="playagainBtn" onclick="playagain()">PLAY AGAIN</button>
+                    <div class="you-win">TIE UP</div>
+                    <div class="against-pc"></div>
+                    <button type="submit" class="playagainBtn" onclick="playagain()">REPLAY</button>
                 </div>
                 <div><img class="ripple2" src="files/ripple.svg" alt="" style="opacity:0%"></div>
                 <div class="computer-move">
@@ -185,12 +163,33 @@ function handlePaper() {
                 </div>
             </div>`;
 
+    } else if (verdict === 'user') {
+        document.getElementById("dynamic").innerHTML = `
+            <div class="ka-iba-ibo">
+                <div><img class="ripple1" src="files/ripple.svg" alt="" ></div>
+                <div class="player-move">
+                            
+                    <div class="picks">YOU PICKED</div>
+                        <img src="files/paper-big.svg" alt="">
+                    </div>
+                    <div class="victory-text">
+                        <div class="you-win">YOU WIN</div>
+                        <div class="against-pc">AGAINST PC</div>
+                        <button type="submit" class="playagainBtn" onclick="playagain()">PLAY AGAIN</button>
+                    </div>
+                    <div><img class="ripple2" src="files/ripple.svg" alt="" style="opacity:0%"></div>
+                    <div class="computer-move">
+                        <div class="picks">PC PICKED</div>
+                            <img src="files/${nameofMove}-big.svg" alt="">
+                        </div>
+            </div>`;
+
         document.getElementById("testBtn").innerHTML = `
             <button class="rules-button1" id="ruleshere" onclick="displayRules()">RULES</button>
             <a href="hurray.html"><button class="nextBtn">NEXT</button></a>`
     } else if (verdict === 'computer') {
         document.getElementById("dynamic").innerHTML = `
-      <div class="ka-iba-ibo">
+            <div class="ka-iba-ibo">
                 <div><img class="ripple1" src="files/ripple.svg" alt="" style="opacity:0%"></div>
                 <div class="player-move">
                     
@@ -218,28 +217,28 @@ function handleScissor() {
     const verdict = gameplay(2); //2 is scissors
     if (verdict === 'tie') {
         document.getElementById("dynamic").innerHTML = `
-    <div class="ka-iba-ibo">
-              <div><img class="ripple1" src="files/ripple.svg" alt="" style="opacity:0%"></div>
-              <div class="player-move">
-                  
-                  <div class="picks">YOU PICKED</div>
-                  
-                  <img src="files/scissors-big.svg" alt="">
-              </div>
-              <div class="victory-text">
-                  <div class="you-win">TIE UP</div>
-                  <div class="against-pc"></div>
-                  <button type="submit" class="playagainBtn" onclick="playagain()">REPLAY</button>
-              </div>
-              <div><img class="ripple2" src="files/ripple.svg" alt="" style="opacity:0%"></div>
-              <div class="computer-move">
-                  <div class="picks">PC PICKED</div>
-                  <img src="files/${nameofMove}-big.svg" alt="">
-              </div>
-          </div>`;
+            <div class="ka-iba-ibo">
+                <div><img class="ripple1" src="files/ripple.svg" alt="" style="opacity:0%"></div>
+                <div class="player-move">
+                    
+                    <div class="picks">YOU PICKED</div>
+                    
+                    <img src="files/scissors-big.svg" alt="">
+                </div>
+                <div class="victory-text">
+                    <div class="you-win">TIE UP</div>
+                    <div class="against-pc"></div>
+                    <button type="submit" class="playagainBtn" onclick="playagain()">REPLAY</button>
+                </div>
+                <div><img class="ripple2" src="files/ripple.svg" alt="" style="opacity:0%"></div>
+                <div class="computer-move">
+                    <div class="picks">PC PICKED</div>
+                    <img src="files/${nameofMove}-big.svg" alt="">
+                </div>
+            </div>`;
     } else if (verdict === 'user') {
         document.getElementById("dynamic").innerHTML = `
-      <div class="ka-iba-ibo">
+            <div class="ka-iba-ibo">
                 <div><img class="ripple1" src="files/ripple.svg" alt=""></div>
                 <div class="player-move">
                     
@@ -264,7 +263,7 @@ function handleScissor() {
             <a href="hurray.html"><button class="nextBtn">NEXT</button></a>`
     } else if (verdict === 'computer') {
         document.getElementById("dynamic").innerHTML = `
-      <div class="ka-iba-ibo">
+            <div class="ka-iba-ibo">
                 <div><img class="ripple1" src="files/ripple.svg" alt="" style="opacity:0%"></div>
                 <div class="player-move">
                     
