@@ -42,7 +42,18 @@ function playagain() {
     margin-left: 1360px;" onclick="displayRules()">RULES</button>`
 }
 
+//AUDIO StUFF
 
+let victory = document.getElementById("winAudio");
+let loss = document.getElementById("loseAudio");
+
+function playVictory() {
+    victory.play();
+}
+
+function playLoss() {
+    loss.play();
+}
 //LOGIC BEHIND ROCK-PAPER-SCISSORS
 
 const moves = ['rock', 'paper', 'scissors'];
@@ -107,10 +118,13 @@ function handleRock() {
                     <div class="picks">PC PICKED</div>
                     <img src="files/${nameofMove}-big.svg" alt="">
                 </div>`
+                
 
         document.getElementById("testBtn").innerHTML = `
                 <button class="rules-button1" id="ruleshere" onclick="displayRules()">RULES</button>
                 <a href="hurray.html"><button class="nextBtn">NEXT</button></a>`
+
+        victory.play();
     } else if (verdict === 'computer') {
         document.getElementById("dynamic").innerHTML = `
             <div class="ka-iba-ibo">
@@ -134,6 +148,8 @@ function handleRock() {
         document.getElementById("testBtn").innerHTML = `
             <button class="rules-button1" id="ruleshere" style=" margin-top: 499px;
             margin-left: 1360px;" onclick="displayRules()">RULES</button>`
+
+        loss.play();
     }
 
 }
@@ -187,6 +203,8 @@ function handlePaper() {
         document.getElementById("testBtn").innerHTML = `
             <button class="rules-button1" id="ruleshere" onclick="displayRules()">RULES</button>
             <a href="hurray.html"><button class="nextBtn">NEXT</button></a>`
+
+        victory.play();
     } else if (verdict === 'computer') {
         document.getElementById("dynamic").innerHTML = `
             <div class="ka-iba-ibo">
@@ -208,6 +226,8 @@ function handlePaper() {
                     <img src="files/${nameofMove}-big.svg" alt="">
                 </div>
             </div>`;
+
+        loss.play();
     }
 
 }
@@ -261,6 +281,8 @@ function handleScissor() {
         document.getElementById("testBtn").innerHTML = `
             <button class="rules-button1" id="ruleshere" onclick="displayRules()">RULES</button>
             <a href="hurray.html"><button class="nextBtn">NEXT</button></a>`
+
+        victory.play();
     } else if (verdict === 'computer') {
         document.getElementById("dynamic").innerHTML = `
             <div class="ka-iba-ibo">
@@ -282,6 +304,8 @@ function handleScissor() {
                     <img src="files/${nameofMove}-big.svg" alt="">
                 </div>
             </div>`;
+
+        loss.play();
     }
 
 }
